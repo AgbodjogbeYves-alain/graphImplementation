@@ -15,7 +15,11 @@ public class Vertex
     public Vertex()
     {
         number = (int)Math.random();
-        neighbours = null;
+        for (int i=0;i<this.neighbours.length;i++)
+		{
+			this.neighbours[i] = null;
+		}
+        
     }
 
     int getNumVertex()
@@ -35,16 +39,24 @@ public class Vertex
 
     void addNeighbour(Vertex vertex1)
     {
-    	for (int i=0; i<this.neighbours.length; i++){
+    	int i=0;
+    	boolean insere = false;
+		while( i<this.neighbours.length && !insere){
     		if (this.neighbours[i]==null){
     			this.neighbours[i]=vertex1;
+    			insere = true;
     		}
+    		i++;
     	}
-    	
-    	for (int j=0; j<this.neighbours.length; j++){
+		
+		int j=0;
+		insere = false;
+    	while (j<this.neighbours.length && !insere){
     		if (vertex1.neighbours[j]==null){
     			vertex1.neighbours[j]=this;
+    			insere=true;
     		}
+    		j++;
     	}
     }
 

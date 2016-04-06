@@ -2,7 +2,7 @@ public class UndirectedEdge implements Edge
 {
 
     private int name;
-    private CoupleVertex vertex;
+    private CoupleVertex vertex = new CoupleVertex(null,null);
     private Graphe g;
 
     UndirectedEdge(int n, Vertex v1, Vertex v2)

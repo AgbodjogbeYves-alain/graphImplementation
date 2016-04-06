@@ -49,9 +49,7 @@ public class graphImplementation implements Graphe {
 		int i = 0;
 		boolean insere = false;
 		while(i<tabvertex.length && insere==false){	
-			System.out.println("Fait");
 			if (this.tabvertex[i] == null){
-				System.out.println("Fait");
 				this.tabvertex[i]= arg0;
 				insere = true;
 			}	
