@@ -29,16 +29,18 @@ public class TestImpl {
 			int y = i+1;
 			System.out.println("");
 			System.out.println("Les voisin du vertex v"+y+" sont" );
-			int j=0;
+			int j=1;
 			Vertex[] t = g.gettabvertex();
 			
-				while(t[i].getNeighbours()[j]!=null){
-					int x = t[i].getNeighbours()[j].getNumVertex();
-						System.out.print("v"+x);
-					}
+				do{
+					int x = 0;
+					x = t[i].getNeighbours()[j].getNumVertex();
+					System.out.print("v"+x);
 					j++;
-				}
-			i++;
+				}while(t[i].getNeighbours()[j]!=null && t[i].getNeighbours()[j-1].getNumVertex()!=t[i].getNeighbours()[j+1].getNumVertex());
+			i++;	
+		}
+			
 		}
 }
 	
