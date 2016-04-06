@@ -5,7 +5,9 @@ public class graphImplementation implements Graphe {
 	public Vertex[] tabvertex = new Vertex[100];
 	public Edge[] tabEdge = new Edge[100];
 	
-	
+	/**
+	 * Constructor for the graph
+	 */
 	public graphImplementation(){
 		int i=0;
 		for (i=0;i<this.tabvertex.length;i++)
@@ -18,6 +20,10 @@ public class graphImplementation implements Graphe {
 			this.tabEdge[i] = null;
 		}
 	}
+	
+	/**
+	 * Function for add an Edge in the graph: an undirected edge
+	 */
 	@Override
 	public void addEdge(Vertex arg0, Vertex arg1) { //J'estime qu'il s'agit d'un ajout de UndirectedEdge
 		UndirectedEdge e = new UndirectedEdge(-1, arg0, arg1);
@@ -44,6 +50,9 @@ public class graphImplementation implements Graphe {
 		
 	}
 	
+	/**
+	 * Function for add a vertex in the graph
+	 */
 	@Override
 	public void addVertex(Vertex arg0) {
 		int i = 0;
@@ -61,6 +70,9 @@ public class graphImplementation implements Graphe {
 	}
 
 	@Override
+	/**
+	 * Function for control if the graph is empty or not
+	 */
 	public boolean isEmpty() {
 		if(this.tabvertex == null && this.tabEdge == null){
 			return true;
@@ -70,6 +82,9 @@ public class graphImplementation implements Graphe {
 	}
 
 	@Override
+	/**
+	 * Function for remove an undirected edge
+	 */
 	public void removeEdge(int arg0) {
 		int x;
 		for (x=0;x<10;x++){
@@ -85,7 +100,11 @@ public class graphImplementation implements Graphe {
 		
 	}
 
-	
+	/**
+	 * Function for test if an vertex is in the graph
+	 * @param arg0 num Vertex
+	 * @return boolean
+	 */
 	public boolean isIn(int arg0){
 		boolean res = false;
 		int i=0;
@@ -99,6 +118,9 @@ public class graphImplementation implements Graphe {
 		
 	}
 	@Override
+	/**
+	 * Function for remove a vertex from the graph
+	 */
 	public void removeVertex(int arg0) {
 		Vertex v1 = null;
 		if (isIn(arg0)==true){
@@ -137,10 +159,18 @@ public class graphImplementation implements Graphe {
 			
 	}
 	
+	/**
+	 * Function for fiind the tab of vertex of the graph
+	 * @return
+	 */
 	public Vertex[] gettabvertex(){
 		return this.tabvertex;
 	}
 	
+	/**
+	 * Function for get the edge in the graph
+	 * @return Tab of edge
+	 */
 	public Edge[] gettabEdge(){
 		return this.tabEdge;
 	}
