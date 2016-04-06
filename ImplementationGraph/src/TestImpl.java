@@ -34,13 +34,14 @@ public class TestImpl {
 			
 				while(t[i].getNeighbours()[j]!=null){
 					int x = t[i].getNeighbours()[j].getNumVertex();
-					System.out.println("v"+x);
+						System.out.print("v"+x);
+					}
 					j++;
 				}
 			i++;
-			}
 		}
-	}
+}
+	
 	
 
 
